@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+
+{% block contenido %}
+    <h1>Nuevo mensaje</h1>
+    <p style="color: green;">{{mensaje}}</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <div class="row">
+                <div class="col">
+                    <label for="" class="col-form-label"> Mensaje</label>
+                    <textarea style="width: 500px;" name="mensaje" class="form-control" required></textarea>
+                </div>
+            </div>
+            <br>
+            <div class="row">          
+                <div class="col">
+                    <label for="" > Fecha</label>
+                    <input type="date" name="fecha">
+                </div>
+            </div>            
+            <br>
+            <div class="row">
+                <div class="col"> <input type="submit"  class="btn btn-success btn-lg btn-block" value="Enviar"></div>
+                <div class="col"></div>
+            </div>
+        </div>
+    </form>
+{% endblock %}
